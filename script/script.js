@@ -1,5 +1,10 @@
-let message = function(){
-    alert('Изучил git и github');
-};
+let money;
+let income; 
+let addExpenses; 
+let deposit; 
+let mission; 
+let period;
 
-document.getElementById('github').addEventListener('click', message);
+alert ( 'Hello world!');
+
+console.log('My first homework.');
