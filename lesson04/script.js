@@ -26,28 +26,16 @@ console.log(Math.round(realPer));
 let budgetDay = budgetMonth/30;
 console.log(Math.floor(budgetDay));
 
-if (budgetMonth >= 1200){
+if (budgetDay > 1200){
     console.log('У Вас высокий уровень дохода.')
 
-} else if (budgetMonth >=600 || budgetMonth<=1200){
+} else if (budgetDay >=600){
     console.log('У вас средний уровень дохода.')
 
-} else if (budgetMonth >= 0 || budgetMonth<=600){
+} else if (budgetDay >= 0){
 console.log('У вас низкий уровень дохода.')
 
-}else if (budgetMonth<0){
+}else if (budgetDay<0){
     console.log('Что то пошло не так')
 }
 
-let getExpensesMonth = function(){
-
-console.log(amount1 + amount2, 'Расходы за месяц');
-}
-
-getExpensesMonth();
-
-let getAccumulatedMonth = function(){
-    console.log(Number(question - getExpensesMonth, 'Остаток за месяц'));
-}
-
-getAccumulatedMonth();
