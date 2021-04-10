@@ -21,7 +21,7 @@ let budgetMonth = question - (amount1 + amount2);
 console.log(budgetMonth);
 
 let realPer = mission/budgetMonth;
-console.log(Math.round(realPer));
+console.log(Math.ceil(realPer));
 
 let budgetDay = budgetMonth/30;
 console.log(Math.floor(budgetDay));
