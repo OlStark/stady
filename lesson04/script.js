@@ -46,15 +46,19 @@ console.log(TargetMonth, 'Месяцев для достижения цели');
 let budgetDay = AccumulatedMonth/30;
 console.log(Math.floor(budgetDay, 'Дневной бюджет' ));
 
-if (budgetDay > 1200){
-    console.log('У Вас высокий уровень дохода.')
+let getStatusIncome = function () {
+
+    if (budgetDay > 1200){
+    return('У Вас высокий уровень дохода.')
 
 } else if (budgetDay >=600){
-    console.log('У вас средний уровень дохода.')
+    return('У вас средний уровень дохода.')
 
 } else if (budgetDay >= 0){
-console.log('У вас низкий уровень дохода.')
+return('У вас низкий уровень дохода.')
 
 }else if (budgetDay<0){
-    console.log('Что то пошло не так')
+    return('Что то пошло не так')
 }
+};
+console.log(getStatusIncome());
