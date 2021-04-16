@@ -28,7 +28,7 @@ let appData = {
         let addExpenses = prompt ('Перечислите возможные расходы за рассчитываемый период через запятую:');
         appData.addExpenses = addExpenses.toLocaleLowerCase().split(',');
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
-        appData.expenses = 
+        appData.expenses = function(){}
         
     },
     budget: question,
