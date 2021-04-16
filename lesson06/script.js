@@ -1,12 +1,33 @@
 'use strict';
-function one() {
-    let x = 99;
-
-    function two(y) {
-        return x <= y;
+function checkGuess() {
+    let userGuess = +prompt('Угадай число от 1 до 100');
+    if (prompt === 1) {
+      guesses.textContent = 'Previous guesses: ';
     }
-    return two(+prompt('Угадай число от 1 до 100'));
-}
+    guesses.textContent += userGuess + ' ';
+  
+    if (userGuess === randomNumber) {
+      lastResult.textContent = 'Congratulations! You got it right!';
+      lastResult.style.backgroundColor = 'green';
+      lowOrHi.textContent = '';
+      setGameOver();
+    } else if (guessCount === 10) {
+      lastResult.textContent = '!!!GAME OVER!!!';
+      setGameOver();
+    } else {
+      lastResult.textContent = 'Wrong!';
+      lastResult.style.backgroundColor = 'red';
+      if(userGuess < randomNumber) {
+        lowOrHi.textContent = 'Last guess was too low!';
+      } else if(userGuess > randomNumber) {
+        lowOrHi.textContent = 'Last guess was too high!';
+      }
+    }
+  
+    guessCount++;
+    guessField.value = '';
+    guessField.focus();
+  }
 
-console.log(one());
-
+  
+  console.log(checkGuess());
