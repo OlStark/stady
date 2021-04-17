@@ -1,33 +1,35 @@
 'use strict';
-function checkGuess() {
-    let userGuess = +prompt('Угадай число от 1 до 100');
-    if (prompt === 1) {
-      guesses.textContent = 'Previous guesses: ';
-    }
-    guesses.textContent += userGuess + ' ';
-  
-    if (userGuess === randomNumber) {
-      lastResult.textContent = 'Congratulations! You got it right!';
-      lastResult.style.backgroundColor = 'green';
-      lowOrHi.textContent = '';
-      setGameOver();
-    } else if (guessCount === 10) {
-      lastResult.textContent = '!!!GAME OVER!!!';
-      setGameOver();
-    } else {
-      lastResult.textContent = 'Wrong!';
-      lastResult.style.backgroundColor = 'red';
-      if(userGuess < randomNumber) {
-        lowOrHi.textContent = 'Last guess was too low!';
-      } else if(userGuess > randomNumber) {
-        lowOrHi.textContent = 'Last guess was too high!';
-      }
-    }
-  
-    guessCount++;
-    guessField.value = '';
-    guessField.focus();
-  }
+function one() {
 
-  
-  console.log(checkGuess());
+    let isNumber = function(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n)
+        };
+        
+        let x = Math.floor(Math.random() * 100);
+
+        function two() {
+            let number;
+            number = prompt('Угадай число от 1 до 100!');
+            console.log(number);
+            if(number === null){
+                alert('Игра окончена!');
+            } else if(number > x){
+                alert('Загаданное число меньше!');
+                two();
+            } else if ( number < x){
+                alert('Загаданное число больше!');
+                two();
+            } else if(!isNumber(number)){
+                alert('Введите число!');
+                two();
+            } else {
+                alert('Поздравляю вы угадали!');
+            }
+        };
+
+    return two();
+    
+}
+
+
+one();
