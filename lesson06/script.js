@@ -16,10 +16,10 @@ function one() {
             }else if(number > x){
                 alert('Загаданное число меньше!');
                 two();
-            } if ( number < x){
+            }else if ( number < x){
                 alert('Загаданное число больше!');
                 two();
-            } if(!isNumber(number)){
+            }else if(!isNumber(number)){
                 alert('Введите число!');
                 two();
             } else {
