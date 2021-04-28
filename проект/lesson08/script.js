@@ -48,7 +48,7 @@ let appData = {
         }
 
         let addExpenses = prompt ('Перечислите возможные расходы за рассчитываемый период через запятую:');
-        appData.addExpenses = (addExpenses.charAt(0).toUpperCase() + addExpenses.substring(1)).split(', ');
+        appData.addExpenses = addExpenses.split(', ').map((key, i) => key[0].toUpperCase() + key.slice(1));
         appData.deposit = confirm('Есть ли у вас депозит в банке?');
         
 
@@ -63,7 +63,7 @@ let appData = {
                 expen = prompt('Во сколько это обойдется?');
             }
             while (!isNumber(expen)) 
-            appData.expenses[+expenses] = expen;            
+            appData.expenses[expenses] = +expen;            
             }
             
     },
