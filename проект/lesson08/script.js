@@ -63,7 +63,7 @@ let appData = {
                 expen = prompt('Во сколько это обойдется?');
             }
             while (!isNumber(expen)) 
-            appData.expenses[expenses] = expen;            
+            appData.expenses[+expenses] = expen;            
             }
             
     },
