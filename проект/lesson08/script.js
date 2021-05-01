@@ -163,3 +163,5 @@ for (let key in appData){
 
    console.log(key, appData[key]);
 }
+
+console.log(appData.addExpenses.join(', '));
