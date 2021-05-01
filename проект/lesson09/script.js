@@ -176,23 +176,23 @@ let checkbox = document.querySelector('#deposit-check');
 
 let arrayInput = document.querySelectorAll('.additional_income-item');
 
-let dayBudget = document.getElementsByClassName('budget_day-value');
+let dayBudget = document.getElementsByClassName('budget_day-value')[0];
 
-let monthExpenses = document.getElementsByClassName('expenses_month-value');
+let monthExpenses = document.getElementsByClassName('expenses_month-value')[0];
 
-let addIncome = document.getElementsByClassName('additional_income-value');
+let addIncome = document.getElementsByClassName('additional_income-value')[0];
 
-let addExpenses = document.getElementsByClassName('additional_expenses-value');
+let addExpenses = document.getElementsByClassName('additional_expenses-value')[0];
 
-let accumulation = document.getElementsByClassName('income_period-value');
+let accumulation = document.getElementsByClassName('income_period-value')[0];
 
-let targetTime = document.getElementsByClassName('target_month-value');
+let targetTime = document.getElementsByClassName('target_month-value')[0];
 
 let monthIncome = document.querySelector('.salary-amount');
 
 let addIncomeTitle = document.querySelector('.income-title');
 
-let addIncome = document.querySelector('.income-amount');
+let inputAddIncome = document.querySelector('.income-amount');
 
 let expensesTitle = document.querySelector('.expenses-title');
 
