@@ -40,6 +40,8 @@ let target = document.querySelector('.target-amount');
 
 let range = document.querySelector('.period-select');
 
+let periodAmount = document.querySelector('.period-amount');
+
 let additionalExpensesItem = document.querySelector('.additional_expenses-item');
 
 let incomeItem = document.querySelectorAll('.income-items');
@@ -70,7 +72,7 @@ let appData = {
             alert('Ошибка, поле "Месячный доход" должно быть заполнено!');
             return;
         }
-        appData.budget = monthIncome.value;
+        appData.budget = +monthIncome.value;
 
         appData.getExpenses();
 
@@ -81,8 +83,9 @@ let appData = {
         appData.getAddExpenses();
         appData.getAddIncome();
         appData.getIncome();
+
         appData.showResult();
-        console.log(getIncome());
+        
     },
 
     showResult: function(){
@@ -92,7 +95,8 @@ let appData = {
         addExpensesValue.value = appData.addExpenses.join(', ');
         addIncome.value = appData.addIncome.join(', ');
         targetTime.value = Math.ceil(appData.getTargetMonth());
-        accumulation.value = appData.calcSaveMoney();
+        
+    
 
     },
     addExpensesBlock: function() {
@@ -120,7 +124,7 @@ let appData = {
     getIncome: function() {
         incomeItem.forEach(function(item){
             let itemIncome = item.querySelector('.income-title').value;
-            let cashIncome = item.querySelector('.income-amount').value;
+            let cashIncome = +item.querySelector('.income-amount').value;
 
         if (itemIncome !=='' && cashIncome !== ''){
             appData.incomeMonth[itemIncome] = cashIncome;
@@ -159,7 +163,7 @@ let appData = {
     
     getBudget: function () {
 
-        appData.budgetMonth = appData.budget  - appData.expensesMonth;
+        appData.budgetMonth = appData.budget - appData.expensesMonth;
         appData.budgetDay = Math.floor(appData.budgetMonth / 30);
     },
 
@@ -210,11 +214,27 @@ let appData = {
     calcSaveMoney: function(){
 
         return appData.budgetMonth * range.value;
-    }
+    },
     
-    
+
 };
 
+    let changeFunc = function(event){
+             
+        periodAmount.innerHTML = event.target.value;
+    };
+    range.addEventListener('input', changeFunc);
+
+    
+
+    let incomeFunc = function(){
+      
+        return monthIncome.value * range.value;
+        };
+
+        monthIncome.addEventListener('input', incomeFunc);
+
+        console.log(incomeFunc());
 
 
 start.addEventListener('click' , appData.start);
