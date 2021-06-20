@@ -68,11 +68,7 @@ let appData = {
     expensesMonth: 0,
     start: function () { 
 
-        if(monthIncome.value === ''){
-            alert('Ошибка, поле "Месячный доход" должно быть заполнено!');
-            return;
-        }
-        appData.budget = +monthIncome.value;
+        appData.budget = + monthIncome.value;
 
         appData.getExpenses();
 
@@ -95,6 +91,12 @@ let appData = {
         addExpensesValue.value = appData.addExpenses.join(', ');
         addIncome.value = appData.addIncome.join(', ');
         targetTime.value = Math.ceil(appData.getTargetMonth());
+        
+
+        range.addEventListener('input', function() {
+
+            accumulation.value = appData.calcSaveMoney();
+        });
         
     
 
@@ -220,22 +222,24 @@ let appData = {
 };
 
     let changeFunc = function(event){
-             
+
+        accumulation.value = appData.calcSaveMoney();
+
         periodAmount.innerHTML = event.target.value;
     };
     range.addEventListener('input', changeFunc);
-
     
 
-    let incomeFunc = function(){
-      
-        return monthIncome.value * range.value;
-        };
+    button.addEventListener('click', function(event){
+        if(monthIncome.value === ''){
 
-        monthIncome.addEventListener('input', incomeFunc);
+        event.preventDefault();
 
-        console.log(incomeFunc());
+        alert('Ошибка, поле "Месячный доход" должно быть заполнено!');
 
+            return;
+        }
+    });
 
 start.addEventListener('click' , appData.start);
 
