@@ -1,0 +1,89 @@
+body {
+   background-color: rgba(120, 194, 243, 0.473);
+   flex-direction: column;
+}
+
+.main {
+    display: flex;
+    
+}
+
+header {
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+    padding: 20px;
+}
+
+.header_link {
+    padding-right: 50px;
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.header_link:hover {
+    color: azure;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000000;
+}
+
+.title {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.my_photo {
+display: flex;
+flex-direction: column;
+text-align: center;
+padding: 50px;
+}
+
+.about{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.becoming {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.7);
+    padding: 30px 0 0 0;
+}
+
+p {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+a {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.contacts {
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact_items {
+text-decoration: none;
+font-family: Arial, Helvetica, sans-serif;
+transition: color 0.2s;
+}
+
+.contact_items:hover {
+    color: azure;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000000;
+}
+
+footer{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-top: solid 1px black;
+    padding: 30px 0 30px 0;
+}
