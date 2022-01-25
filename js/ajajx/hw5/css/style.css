@@ -1,0 +1,32 @@
+h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+input {
+    width: 180px;
+    height: 20px;
+}
+
+.form{
+    margin: 0 auto;
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+}
+
+.result {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+}
+
+.card {
+    width: 200px;
+    margin: 20px;
+}
+
+.card-image {
+    display: block;
+    width: 200px;
+    height: 150px;
+} 
