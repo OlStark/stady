@@ -1,0 +1,61 @@
+.chat {
+	margin: 0 auto;
+	width: 500px;
+	height: 450px;
+	border: solid cadetblue;
+	border-radius: 5px;
+}
+
+.button {
+	border: none;
+	background-color: rgba(95, 158, 160, 0.384);
+	height: 40px;
+	border-radius: 5px;
+	font-size: 18px;
+}
+
+.button:hover {
+	background-color: rgb(26, 95, 97);
+}
+.text {
+	width: 250px;
+	outline: none;
+}
+
+.message {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px;
+}
+
+.corresp {
+	margin: 0 auto;
+	border: solid cadetblue;
+	border-radius: 5px;
+	width: 450px;
+	height: 350px;
+	position: relative;
+	top: 20px;
+	overflow: hidden scroll;
+}
+
+.corresp div {
+	width: 150px;
+	height: 30px;
+	border: solid 2px cadetblue;
+	border-radius: 7px;
+	margin: 10px;
+	padding: 7px 0 0 0;
+	text-align: center;
+	font-size: 20px;
+}
+
+.corresp div a {
+	text-decoration: none;
+	color: brown;
+}
+
+.corresp div:nth-child(odd) {
+	position: relative;
+	left: 250px;
+}
