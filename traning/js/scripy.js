@@ -1,25 +1,18 @@
-function notifyMe() {
-    // Проверяем наличие Notification API в браузере
-    if (!("Notification" in window)) {
-      console.log("Нет поддержки Notification API");
-  
-    // Если Notification API и разрешение на отправку
-    // есть, то отправим уведомление
-    } else if (Notification.permission === "granted") {
-       new Notification("Hello!");
-  
-    // Если Notification API есть, но нет разрешения и нет
-    // запрета, то можно запросить разрешение
-    } else if (Notification.permission !== "denied") {
-      Notification.requestPermission()
-        .then(function (permission) {
-           if (permission === "granted") {
-             var notification = new Notification("Hi there!");
-           }
-        });
-     }
-    // Последний случай - пользователь запретил уведомления
-    // Тогда показать уведомления нельзя
-  }
+export function definePrime(num) {
+  let isPrime, result;
+  isPrime = true;
 
-  notifyMe();
+  if (num > 1 && num <= 1000) {
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        isPrime = false;
+      }
+    }
+    result = isPrime
+      ? `Число ${num} - простое число`
+      : `Число ${num} - составное число`;
+  } else if (num > 1000 || num < 1) {
+    result = "Данные неверны";
+  }
+  return result;
+}

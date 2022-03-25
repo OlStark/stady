@@ -1,0 +1,12 @@
+.main {
+    margin: 0 auto;
+    width: 200px;
+    position: relative;
+    top: 20px;
+    align-items: center;
+}
+
+.in_data button {
+    position: relative;
+    left: 40px;
+}
